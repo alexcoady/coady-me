@@ -1,0 +1,43 @@
+/* ------------------------------------------------------------- */
+/* ------- COLOURS --------------------------------------------- */
+/* ------------------------------------------------------------- */
+
+/* ------- DEFINITION ------------------------------------------ */
+
+$color-blue-light: #2980b9;
+$color-slate-dark: #333;
+$color-white-off: #ecf0f1;
+$color-silver: #bdc3c7;
+$color-coral: #e74c3c;
+$color-emerald: #16a085;
+$color-orange: #e67e22;
+$color-grey-dull: #2c3e50;
+
+/* ------- CONTEXT --------------------------------------------- */
+
+$color-home: $color-coral;
+$color-about: $color-emerald;
+$color-work: $color-orange;
+$color-contact: $color-grey-dull;
+$color-blog: $color-blue-light;
+
+/* ------------------------------------------------------------- */
+/* ------- FONTS ----------------------------------------------- */
+/* ------------------------------------------------------------- */
+
+$font-default: "ff-dagny-web-pro", "Trebuchet MS", Arial, sans-serif;
+$font-special: Georgia, Times New Roman, serif;
+
+/* ------- FONT AWESOME ---------------------------------------- */
+
+$FontAwesomePath:   "/fonts";
+
+/* ------------------------------------------------------------- */
+/* ------- DIMENSIONS ------------------------------------------ */
+/* ------------------------------------------------------------- */
+
+$spacing-vertical: 20px;
+
+$dimension-site-width: 960px;
+$dimension-header-height: 60px;
+

@@ -1,0 +1,253 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/typography/vertical_rhythm";
+
+@import "settings";
+@import "grid";
+@import "font-awesome";
+
+/* ------------------------------------------------------------- */
+/* ------- GLOBAL ---------------------------------------------- */
+/* ------------------------------------------------------------- */
+
+html, body {
+	height: 100%;
+}
+
+/* ------------------------------------------------------------- */
+/* ------- FONTS ----------------------------------------------- */
+/* ------------------------------------------------------------- */
+
+$base-font-size: 16px;
+$base-line-height: 24px;
+@include establish-baseline;
+
+body {
+	font-family: $font-default;
+	color: $color-slate-dark;
+	background: $color-slate-dark;
+}
+
+/* ------------------------------------------------------------- */
+/* ------- PANEL DEVICE ---------------------------------------- */
+/* ------------------------------------------------------------- */
+
+.site-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.panel-stage {
+	width: 640px;
+	height: 370px;
+	top: $dimension-header-height + 4 + 20;;
+	left: 50%;
+	margin-left: -320px;
+	overflow: visible;
+	position: absolute;
+	// background: rgba(red, 0.1);
+}
+
+.panel-container {
+	@include transition-property(top left);
+	@include transition-duration(1s);
+	width: 500%; // number_of_page_groups * 100%
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+
+.panel-container .page-group-collection-list {
+
+	height: 100%;
+}
+
+.panel-container .page-group-item {
+
+	display: block;
+	float: left;
+	width: 620px; // 100 / number_of_page_groups
+	height: 350px;
+
+	margin: 0 10px;
+}
+
+.panel-container .page-collection-list {
+
+	width: 100%;
+	height: 100%;
+	background: inherit;
+}
+
+.panel-container .page-item {
+	
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: inherit;
+
+	margin-bottom: 20px;
+}
+
+.panel-container .page {
+	width: 100%;
+	height: 100%;
+}
+
+/* ------------------------------------------------------------- */
+/* ------- GRID ------------------------------------------------ */
+/* ------------------------------------------------------------- */
+
+.container {
+	@include clearfix;
+	position: relative;
+	max-width: 960px;
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+/* ------------------------------------------------------------- */
+/* ------- NAVIGATION ------------------------------------------ */
+/* ------------------------------------------------------------- */
+
+.site-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: $dimension-header-height;
+	z-index: 100;
+	background: black;
+}
+
+.panel-navigation .page-group-list {
+	margin-right: column-gutter(1);
+	float: right;
+}
+
+.panel-navigation .page-group-item {
+	@include inline-block;
+	margin-left: 10px;
+}
+
+.panel-navigation .page-collection-list {
+
+}
+
+.panel-navigation .page-item {
+	cursor: pointer;
+	display: none;
+
+	&:first-child {
+		display: block;
+		color: #FFF;
+		line-height: $dimension-header-height;
+		text-transform: uppercase;
+		font-size: 0.9em;
+	}	
+}
+
+.utility-bar {
+	@include transition-property(all);
+	@include transition-duration(1s);
+	top: $dimension-header-height;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: pink;
+}
+
+/* ------------------------------------------------------------- */
+/* ------- LOGO FUN -------------------------------------------- */
+/* ------------------------------------------------------------- */
+
+.logo-link {
+	margin-top: 10px;
+	margin-left: column-gutter(1);
+	display: block;
+	float: left;
+}
+
+.logo {
+	
+}
+
+.logo-element {
+	fill: white;
+	// @include transition-property(all);
+	// @include transition-duration(3s);	
+	// @include transition-timing-function(ease-in);	
+
+	-webkit-transition: all 3s ease-in;
+}
+
+
+/* ------------------------------------------------------------- */
+/* ------- KEYBOARD DEVICE ------------------------------------- */
+/* ------------------------------------------------------------- */
+
+
+/* ------------------------------------------------------------- */
+/* ------- PAGE LAYOUT ----------------------------------------- */
+/* ------------------------------------------------------------- */
+
+.page {
+	@include transition-property(opacity);
+	@include transition-duration(1s);
+	@include clearfix;
+	background: $color-white-off;
+}
+
+.active .page {
+	@include opacity(1);
+}
+
+.inactive .page {
+	@include opacity(0.2);
+	overflow: hidden;
+}
+
+.page-header {
+
+}
+
+.page-header .page-heading {
+	@include adjust-font-size-to(18px);
+	@include column(12);
+}
+
+/* ------- CONTACT PAGE ---------------------------------------- */
+
+.entry-content {	
+	@include column(12);
+}
+
+.entry-content p {
+
+	margin-top: 1em;
+
+	&:first-child {
+		@include leader();
+	}
+}
+
+/* ------- CONTACT PAGE ---------------------------------------- */
+
+
+/* ------- HOME PAGE ------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
