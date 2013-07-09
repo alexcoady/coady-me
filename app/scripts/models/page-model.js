@@ -14,7 +14,7 @@ define([
         
         defaults: {
         	'title': 'New page',
-        	'description': 'Welcome to this new page, friend!',
+        	'entry_content': 'Welcome to this new page, friend!',
         	'permalink': 'new-page',
             'key_colour': 'yellowgreen',
         	'template': 'default',

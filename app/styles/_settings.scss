@@ -4,22 +4,34 @@
 
 /* ------- DEFINITION ------------------------------------------ */
 
-$color-blue-light: #2980b9;
-$color-slate-dark: #333;
+// Shades
+$color-grey-dark: #333;
 $color-white-off: #ecf0f1;
 $color-silver: #bdc3c7;
+
+// Colours
+$color-green: #2ecc71;
+$color-blue-pale: #3498db;
 $color-coral: #e74c3c;
-$color-emerald: #16a085;
 $color-orange: #e67e22;
-$color-grey-dull: #2c3e50;
+$color-yellow: #f1c40f;
 
 /* ------- CONTEXT --------------------------------------------- */
 
-$color-home: $color-coral;
-$color-about: $color-emerald;
-$color-work: $color-orange;
-$color-contact: $color-grey-dull;
-$color-blog: $color-blue-light;
+$color-home: $color-orange;
+$color-about: $color-coral;
+$color-work: $color-yellow;
+$color-contact: $color-blue-pale;
+$color-blog: $color-green;
+
+
+/* ------- DOM PLACEHOLDERS (Seems grubby but go with me) ------ */
+
+.color-home { color: $color-home; }
+.color-about { color: $color-about; }
+.color-work { color: $color-work; }
+.color-contact { color: $color-contact; }
+.color-blog { color: $color-blog; }
 
 /* ------------------------------------------------------------- */
 /* ------- FONTS ----------------------------------------------- */

@@ -17,7 +17,7 @@ define([
 
     	initialize: function () {
 
-            this.$el.addClass("template-" + this.model.get('class'));
+            this.$el.addClass("template-" + this.model.get('title'));
             this.model.on('change:active', this.toggleActive, this);
     	},
 

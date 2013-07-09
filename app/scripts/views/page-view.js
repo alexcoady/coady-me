@@ -30,8 +30,6 @@ define([
 
         render: function () {
 
-            document.title = this.model.get('title');
-
             // TODO: Optimise which pages are rendered
             var template = this.template( this.model.toJSON() );
             this.$el.html(template);
@@ -40,6 +38,8 @@ define([
         },
 
         toggleActive: function () {
+
+            document.title = this.model.get('title');
 
             if (this.model.get('active')) {
 
