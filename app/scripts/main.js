@@ -48,7 +48,7 @@ require([
 
     var pageCollection_about = new PageCollection( [ new PageModel({
         'title': 'About',
-        'entry_content': 'My name is Alex Coady. I\'m a front-end & Javascript developer from London, UK.',
+        'entry_content': 'My name is <span class="key">Alex Coady</span>. I\'m a front-end & Javascript developer from London, UK.',
         'permalink': 'index',
         'template': 'about'
     })]);

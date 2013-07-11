@@ -27,11 +27,11 @@ $color-blog: $color-green;
 
 /* ------- DOM PLACEHOLDERS (Seems grubby but go with me) ------ */
 
-.color-home { color: $color-home; }
-.color-about { color: $color-about; }
-.color-work { color: $color-work; }
-.color-contact { color: $color-contact; }
-.color-blog { color: $color-blog; }
+.color-home, .template-home .key { color: $color-home; }
+.color-about, .template-about .key { color: $color-about; }
+.color-work, .template-work .key { color: $color-work; }
+.color-contact, .template-contact .key { color: $color-contact; }
+.color-blog, .template-blog .key { color: $color-blog; }
 
 /* ------------------------------------------------------------- */
 /* ------- FONTS ----------------------------------------------- */

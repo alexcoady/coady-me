@@ -25,32 +25,56 @@ define([
         initialize: function () {
 
             this.model.on('change:active', this.toggleActive, this);
-            this.$el.addClass("template-" + this.model.get('template') + "page-" + this.model.get('permalink') + " inactive");
+            this.$el.addClass("template-" + this.model.get('template') + " page-" + this.model.get('permalink') + " inactive");
         },
 
+        /*
+        *   Function render
+        *   ----------------------------------------------------------
+        *   Renders a page to this view using it's template
+        *   ----------------------------------------------------------
+        *   @param null
+        *   @return View: This view
+        */
         render: function () {
 
-            // TODO: Optimise which pages are rendered
             var template = this.template( this.model.toJSON() );
             this.$el.html(template);
 
             return this;
         },
 
+        /*
+        *   Function toggleActive
+        *   ----------------------------------------------------------
+        *   Sets the correct active state
+        *   ----------------------------------------------------------
+        *   @param null
+        *   @return View: This view
+        */
         toggleActive: function () {
-
-            document.title = this.model.get('title');
 
             if (this.model.get('active')) {
 
+                document.title = this.model.get('title');
                 this.$el.addClass('active').removeClass('inactive');
 
             } else {
 
                 this.$el.removeClass('active').addClass('inactive');
             }
+
+            return this;
         },
 
+        /*
+        *   Function makeActive
+        *   ----------------------------------------------------------
+        *   Activates this view's model
+        *   ----------------------------------------------------------
+        *   @param null
+        *   @return Void
+        */
         makeActive: function () {
 
             var router = NavigationRouter.getInstance();
