@@ -48,8 +48,18 @@ require([
 
     var pageCollection_about = new PageCollection( [ new PageModel({
         'title': 'About',
-        'entry_content': 'My name is <span class="key">Alex Coady</span>. I\'m a front-end & Javascript developer from London, UK.',
+        'entry_content': 'My name is <span class="key">Alex Coady</span>. I\'m a Javascript developer from London, UK.',
         'permalink': 'index',
+        'template': 'about'
+    }), new PageModel({
+        'title': 'What I love',
+        'entry_content': 'I\'m obsessed with indentation-perfect, <span class="key">terse</span> and powerful code. ',
+        'permalink': 'what-i-love',
+        'template': 'about'
+    }), new PageModel({
+        'title': 'What I do',
+        'entry_content': 'I write applications using <span class="key">Backbone.js</span>; use build tools like <span class="key">Grunt</span>; and share as much as possible on <span class="key">GitHub</span>.',
+        'permalink': 'what-i-do',
         'template': 'about'
     })]);
 

@@ -142,8 +142,6 @@ body {
 	&.template-blog { border-color: $color-blog; }
 }
 
-
-
 .panel-navigation .page-collection-list {
 
 }
@@ -250,11 +248,11 @@ body {
 }
 
 .template-about .entry-content {
-	font-size: 3em;
+	// font-size: 3em;
 	font-weight: 200;
-	line-height: 1.3em;
+	// line-height: 1.3em;
+	@include adjust-font-size-to(48px);
 }
-
 
 /* ------- CONTACT PAGE ---------------------------------------- */
 
