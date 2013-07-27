@@ -20,4 +20,4 @@ Clear TODOs:
 - Link with Wordpress back-end (RESTfully)
 - Style individual page elements
 
-Obviosuly all the files/modules installed by running the above commands do NOT form part of the production code. They form the complete local development environment.
+Obviously all the files/modules installed by running the above commands do not form part of the production code. They simply build a complete local development environment. 
