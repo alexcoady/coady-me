@@ -42,7 +42,7 @@ body {
 .panel-stage {
 	width: 640px;
 	height: 370px;
-	top: $dimension-header-height + 3 + 20;;
+	top: $dimension-header-height + $dimension-utility-height + 20;;
 	left: 50%;
 	margin-left: -320px;
 	overflow: visible;
@@ -128,18 +128,19 @@ body {
 .panel-navigation .page-group-list {
 	margin-right: column-gutter(1);
 	float: right;
+	padding-top: 15px;
 }
 
 .panel-navigation .page-group-item {
 	@include inline-block;
 	padding: 0 5px;
-	border-top: 3px solid;
+	border-top: 0 none;
 
-	&.template-home { border-color: $color-home; }
-	&.template-about { border-color: $color-about; }
-	&.template-work { border-color: $color-work; }
-	&.template-contact { border-color: $color-contact; }
-	&.template-blog { border-color: $color-blog; }
+	&.template-home .page-item { border-color: $color-home; }
+	&.template-about .page-item { border-color: $color-about; }
+	&.template-work .page-item { border-color: $color-work; }
+	&.template-contact .page-item { border-color: $color-contact; }
+	&.template-blog .page-item { border-color: $color-blog; }
 }
 
 .panel-navigation .page-collection-list {
@@ -153,19 +154,24 @@ body {
 	&:first-child {
 		display: block;
 		color: #FFF;
-		line-height: $dimension-header-height - 3;
 		text-transform: uppercase;
 		font-size: 0.9em;
+		border-bottom: 1px dotted;
 	}	
+
+	&.active {
+		border-bottom-style: solid;
+	}
 }
 
 .utility-bar {
-	@include transition-property(all);
+	@include transition-property(background);
 	@include transition-duration(1s);
 	top: $dimension-header-height;
 	left: 0;
+	position: absolute;
 	width: 100%;
-	height: 3px;
+	height: $dimension-utility-height;
 	background: black;
 }
 
@@ -240,6 +246,10 @@ body {
 
 /* ------- HOME PAGE ------------------------------------------- */
 
+.template-home .entry-content {
+	font-weight: 200;
+	@include adjust-font-size-to(48px);
+}
 
 /* ------- ABOUT PAGE ------------------------------------------ */
 
@@ -248,15 +258,28 @@ body {
 }
 
 .template-about .entry-content {
-	// font-size: 3em;
 	font-weight: 200;
-	// line-height: 1.3em;
 	@include adjust-font-size-to(48px);
 }
 
 /* ------- CONTACT PAGE ---------------------------------------- */
 
+.template-contact .page {
+	background: transparent;
+}
 
+.template-contact .page .link {
+	font-size: 8em;
+	text-decoration: none;
+}
+
+.template-contact .link .text {
+	font-size: 0em;
+	color: transparent;
+	text-indent: 10000px;
+	overflow: hidden;
+	display: none;
+}
 
 
 

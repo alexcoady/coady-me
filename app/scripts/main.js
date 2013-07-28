@@ -41,7 +41,7 @@ require([
     // TODO: Sync with Wordpress back-end
     var pageCollection_home = new PageCollection( [ new PageModel({
         'title': 'Home',
-        'entry_content': 'Welcome to the portfolio website of Alex Coady.',
+        'entry_content': '<a class="key tour" href="#">Take the tour</a>',
         'permalink': 'index',
         'template': 'home'
     })]);
