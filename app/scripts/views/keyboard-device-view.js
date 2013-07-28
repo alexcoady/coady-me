@@ -158,8 +158,6 @@ define([
 			// done and update the classes in the view to show which buttons are
 			// pressable.
 			/* ---------------------------------------------------------------------- */
-
-			// TODO: 
         }
     });
 

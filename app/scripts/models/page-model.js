@@ -18,7 +18,8 @@ define([
         	'permalink': 'new-page',
             'key_colour': 'yellowgreen',
         	'template': 'default',
-            'active': false
+            'active': false,
+            'ambientActive': false
         },
 
         initialize: function () {
@@ -113,6 +114,19 @@ define([
             // ACTIVATE REQUESTED PAGE
             // 1. Activate PAGE
             page.set('active', true);
+            page.set('ambientActive', true);
+
+            /*
+            Deal with ambient active states. 
+            If the new page is in the same page group then we need to delete the ambient status from the other page
+            */
+
+            if (activePageGroup === pageGroup) {
+                console.log("Same page group");
+                activePage.set('ambientActive', false);
+            } else {
+                console.log("different group");
+            }
 
             // 2. Activate PAGE GROUP
             pageGroup.set('active', true);

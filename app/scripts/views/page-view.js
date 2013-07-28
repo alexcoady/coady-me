@@ -24,7 +24,7 @@ define([
 
         initialize: function () {
 
-            this.model.on('change:active', this.toggleActive, this);
+            this.model.on('change:active change:ambientActive', this.toggleActive, this);
             this.$el.addClass("template-" + this.model.get('template') + " page-" + this.model.get('permalink') + " inactive");
         },
 
@@ -62,6 +62,15 @@ define([
             } else {
 
                 this.$el.removeClass('active').addClass('inactive');
+            }
+
+            if (this.model.get('ambientActive')) {
+
+                this.$el.addClass('ambient-active').removeClass('ambient-inactive');
+
+            } else {
+
+                this.$el.removeClass('ambient-active').addClass('ambient-inactive');
             }
 
             return this;
