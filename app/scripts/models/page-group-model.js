@@ -13,7 +13,8 @@ define([
             'title': 'group',
         	'permalink': 'home', // Top level navigation (ie. work/blog)
         	'pageCollection': null,
-            'active': false
+            'active': false,
+            'topOffset': 0
         },
 
         initialize: function () {

@@ -124,8 +124,10 @@ define([
             // Physically move the container to show the current page
             $('#container').css({
                 'left': ((container_coordinates.x * 100) * -1) + '%',
-                'top': ((container_coordinates.y * 100) * -1) + '%'
+                // 'top': ((container_coordinates.y * 100) * -1) + '%'
             });
+
+            pageGroup.set('topOffset', ((container_coordinates.y * 100) * -1) + '%');            
 
             // TODO: Add property to page such as 'prepare_to_remove' that keeps it rendered, but that is also removed
             // once the CSS transition has ended. This will keep the UI a lot more pleasent. This should probably be

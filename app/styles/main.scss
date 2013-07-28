@@ -41,7 +41,7 @@ body {
 
 .panel-stage {
 	width: 640px;
-	height: 370px;
+	height: 350px;
 	top: $dimension-header-height + 3 + 20;;
 	left: 50%;
 	margin-left: -320px;
@@ -51,7 +51,7 @@ body {
 }
 
 .panel-container {
-	@include transition-property(top left);
+	@include transition-property(left);
 	@include transition-duration(1s);
 	width: 500%; // number_of_page_groups * 100%
 	height: 100%;
@@ -71,15 +71,19 @@ body {
 	display: block;
 	float: left;
 	width: 620px; // 100 / number_of_page_groups
-	height: 350px;
-
+	height: 370px;
 	margin: 0 10px;
+	position: relative;
 }
 
 .panel-container .page-collection-list {
 
+	@include transition-property(top);
+	@include transition-duration(1s);
+	top: 0;
+	position: absolute;
 	width: 100%;
-	height: 100%;
+	height: 350px;
 	background: inherit;
 }
 
