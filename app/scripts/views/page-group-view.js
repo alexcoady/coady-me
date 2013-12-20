@@ -33,13 +33,10 @@ define([
 
         toggleActive: function () {
 
-            console.log(this.model);
-
             if (this.model.get('active')) {
 
                 this.$el.addClass('active').removeClass('inactive');
                 $('#utility-bar').css('background-color', this.model.get('key_color'));
-                // $('.logo-element').css('fill', this.model.get('key_color'));
 
             } else {
 

@@ -121,11 +121,16 @@ define([
             container_coordinates.y = pageCollection.indexOf(page);
             container_coordinates.x = pageGroupCollection.indexOf(pageGroup);
 
-            // Physically move the container to show the current page
+            //Physically move the container to show the current page
             $('#container').css({
                 'left': ((container_coordinates.x * 100) * -1) + '%',
                 'top': ((container_coordinates.y * 100) * -1) + '%'
             });
+
+            var xPercent = ((container_coordinates.x * 100) * -0.2);
+            var yPercent = ((container_coordinates.y * 100) * -1);
+
+            // $('#container').attr("style", '-webkit-transform: translate(' + xPercent + '% ,' + yPercent + '%);');
 
             // TODO: Add property to page such as 'prepare_to_remove' that keeps it rendered, but that is also removed
             // once the CSS transition has ended. This will keep the UI a lot more pleasent. This should probably be

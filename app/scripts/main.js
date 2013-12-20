@@ -47,49 +47,65 @@ require([
     })]);
 
     var pageCollection_about = new PageCollection( [ new PageModel({
-        'title': 'About',
-        'entry_content': 'My name is <span class="key">Alex Coady</span>. I\'m a Javascript developer from London, UK.',
+        'title': "I'm Alex",
+        'entry_content': "<p><h2>I'm Alex, a JavaScript & front-end developer from London.</h2></p> <p>I care how things look; especially the <a class='key' href='/#contact/index'>code I write</a> and the visual design of whatever it is <a class='key' href='/#work'>I'm working on</a>.</p> <p>I have an eye for design, but I'm not a designer. I'm inspired by working on <a class='key' href='/#work/zone-screens'>great-looking projects</a> that have a <a class='key' href='/#work/tesco-kitchen'>real purpose</a>.</p> <p>I'm someone who you can <a class='key' href='/#contact'>discuss ideas</a> with and get honest feedback. I really enjoy these conversations and think they're especially important in an agency. If you're not technical we can still have these discussions, and I promise you won't hear a single unknown abbreviation.</p>",
         'permalink': 'index',
-        'template': 'about'
-    }), new PageModel({
-        'title': 'What I love',
-        'entry_content': 'I\'m obsessed with indentation-perfect, <span class="key">terse</span> and powerful code. ',
-        'permalink': 'what-i-love',
-        'template': 'about'
-    }), new PageModel({
-        'title': 'What I do',
-        'entry_content': 'I write applications using <span class="key">Backbone.js</span>; use build tools like <span class="key">Grunt</span>; and share as much as possible on <span class="key">GitHub</span>.',
-        'permalink': 'what-i-do',
         'template': 'about'
     })]);
 
     var pageCollection_work = new PageCollection( [ new PageModel({
         'title': 'Work',
-        'entry_content': 'Check out some of my recent projects, including work for Coca-Cola, Scouts and BT.',
+        'entry_content': "<p><h2>Check out some of my recent projects.</h2></p> <p><ul class='work-links'> <li><a class='key' href='/#work/zone-responsive'>Zone responsive</a></li> <li><a class='key' href='/#work/scouts'>Scouts</a></li> <li><a class='key' href='/#work/zone-screens'>Zone screens</a></li>  <li><a class='key' href='/#work/tesco-kitchen'>Tesco My Kitchen</a></li> </ul></p>",
         'permalink': 'index',
-    }), new PageModel({
-        'title': 'Scouts',
-        'entry_content': 'I created a map for the new Scouts website.',
-        'permalink': 'scouts',
-        'project_url': 'http://scouts.com',
-        'template': 'project'
-    }), new PageModel({
-        'title': 'CokeZone',
-        'entry_content': 'Work I did for CokeZone in the form of a thousand emails.',
-        'permalink': 'cokezone',
-        'project_url': 'http://cokezone.com',
+        'template': 'about'
+    }), 
+
+    new PageModel({
+        'title': 'Zone responsive',
+        'entry_content': '',
+        'permalink': 'zone-responsive',
+        'project_url': 'http://thisiszone.com',
+        'images': [
+            '/images/work/zone-mobile.png'
+        ],
         'template': 'project'
     }),
-        new PageModel({
-        'title': 'CPSU',
-        'entry_content': 'NSPCC\'s Child Protection in Sport Unit website.',
-        'permalink': 'cpsu',
-        'project_url': 'http://thecpsu.org',
+
+    new PageModel({
+        'title': 'Scouts',
+        'entry_content': '',
+        'permalink': 'scouts',
+        'project_url': 'http://scouts.org.uk',
+        'images': [
+            '/images/work/scouts-map.png'
+        ],
+        'template': 'project'
+    }),
+
+    new PageModel({
+        'title': 'Zone screens',
+        'entry_content': 'Data visualisation project',
+        'permalink': 'zone-screens',
+        'project_url': '',
+        'images': [
+            '/images/work/screens-tweets.png'
+        ],
+        'template': 'project'
+    }), 
+
+    new PageModel({
+        'title': 'Tesco My Kitchen',
+        'entry_content': 'Responsive Facebook app for Tesco',
+        'permalink': 'tesco-kitchen',
+        'project_url': 'https://www.facebook.com/tesco/app_475370039172995',
+        'images': [
+            '/images/work/tesco-desktop.png'
+        ],
         'template': 'project'
     })]);
 
     var pageCollection_contact = new PageCollection( [ new PageModel({
-        'title': 'Contact',
+        'title': 'Get in touch',
         'entry_content': 'I\'d really like to hear from you, whether it\'s for a quote or just to discuss your next project.',
         'permalink': 'index',
         'template': 'contact'
@@ -119,7 +135,13 @@ require([
     var pageGroup_blog = new PageGroupModel({ 'title': 'blog', 'permalink':'blog', 'pageCollection': pageCollection_blog });
 
     // Add our dummy PAGE GROUPS to a collection
-    var pageGroupCollection = new PageGroupCollection([pageGroup_home, pageGroup_about, pageGroup_work, pageGroup_contact, pageGroup_blog]);
+    var pageGroupCollection = new PageGroupCollection([
+        // pageGroup_home, 
+        pageGroup_about, 
+        pageGroup_work, 
+        pageGroup_contact, 
+        // pageGroup_blog
+    ]);
 
     // Set the global instance of all the page data so we can access it anywhere in the system
     PageGroupCollection.setInstance(pageGroupCollection);

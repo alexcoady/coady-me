@@ -33,11 +33,13 @@ $color-blog: $color-green;
 .color-contact, .template-contact .key { color: $color-contact; }
 .color-blog, .template-blog .key { color: $color-blog; }
 
+.work-links .key { color: darken($color-work, 20%); }
+
 /* ------------------------------------------------------------- */
 /* ------- FONTS ----------------------------------------------- */
 /* ------------------------------------------------------------- */
 
-$font-default: "ff-dagny-web-pro", "Trebuchet MS", Arial, sans-serif;
+$font-default: "jaf-facitweb", "Trebuchet MS", Arial, sans-serif;
 $font-special: Georgia, Times New Roman, serif;
 
 /* ------- FONT AWESOME ---------------------------------------- */
@@ -48,9 +50,11 @@ $FontAwesomePath:   "/fonts";
 /* ------- DIMENSIONS ------------------------------------------ */
 /* ------------------------------------------------------------- */
 
+$spacing: 10px;
+
 $spacing-vertical: 20px;
 
-$dimension-site-width: 960px;
+$dimension-site-width: 620px;
 
 $dimension-header-height: 60px;
 

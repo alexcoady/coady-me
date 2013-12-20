@@ -11,7 +11,14 @@ define([
 
     var PagesProjectPageView = PageView.extend({
 
-        template: JST['app/scripts/templates/pages/project-page.ejs']
+        template: JST['app/scripts/templates/pages/project-page.ejs'],
+
+        render: function () {
+
+            var that = PagesProjectPageView.__super__.render.apply(this, arguments);
+
+            return that;
+        }
         
     });
 

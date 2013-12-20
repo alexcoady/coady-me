@@ -18,11 +18,11 @@ define([
     var NavigationRouter = Backbone.Router.extend({
         
         routes: {
-        	':pageGroup': 'loadPage',
-        	':pageGroup/': 'loadPage',
-        	':pageGroup/:page': 'loadPage',
-        	':pageGroup/:page/': 'loadPage',
-            '*path':  'loadPage'
+        	':pageGroup':          'loadPage',
+        	':pageGroup/':         'loadPage',
+        	':pageGroup/:page':    'loadPage',
+        	':pageGroup/:page/':   'loadPage',
+            '*path':               'loadPage'
         },
 
         initialize: function () {

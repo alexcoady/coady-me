@@ -25,6 +25,7 @@ define([
         initialize: function () {
 
         	KeyboardDeviceView.bindKeyboard();
+            KeyboardDeviceView.bindScrolling();
         },
 
         render: function () {
@@ -105,6 +106,48 @@ define([
             });
         },
 
+        bindScrolling: function () {
+
+            var that = this,
+                lock = false;
+
+            $(window).bind('mousewheel', function (ev) {
+
+                if (lock) return;
+
+                var transform = { x: 0, y: 0 };
+
+                // Check to see if user is scrolling up or down
+                if ( Math.abs(ev.originalEvent.deltaY) >= 5 ) {
+
+                    transform.y += ev.originalEvent.deltaY > 1 ? 1 : -1;
+                }
+
+                if ( Math.abs(ev.originalEvent.deltaX) >= 5 ) {
+
+                    transform.x += ev.originalEvent.deltaX > 1 ? 1 : -1;
+                }
+
+                if (transform.x !== 0 || transform.y !== 0) {
+                    that.doGridTransform(transform);
+                }
+
+                lock = true;
+                setTimeout(function () {
+                    lock = false;
+                }, 500);
+            });
+
+            $(window).on('keydown', function (keyEvent) { 
+
+                var transform = { x: 0, y: 0 };
+
+                if (transform.x !== 0 || transform.y !== 0) {
+                    that.doGridTransform(transform);
+                }
+            });
+        },
+
         doGridTransform: function (transform) {
 
         	/* ---------------------------------------------------------------------- */
@@ -158,8 +201,6 @@ define([
 			// done and update the classes in the view to show which buttons are
 			// pressable.
 			/* ---------------------------------------------------------------------- */
-
-			// TODO: 
         }
     });
 

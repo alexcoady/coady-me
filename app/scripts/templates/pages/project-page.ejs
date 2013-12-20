@@ -1,15 +1,27 @@
 <article class="page">
-	
-	<header class="page-header">
-		<div class="container">
-			<h2 class="page-heading"><%= title %></h2>
-		</div>
-	</header>
 
-	<div class="container">
-		<section class="entry-content">
-			<%= entry_content %>
-		</section>
-	</div>
+	<header class="header header--project">
+		<h3 class="heading heading--title"><%= title %></h3>
+		<% 
+			if ( project_url !== undefined && project_url !== "" ) {
+
+				%>
+					<a class="project-link" href="<%= project_url %>" target="_blank">Visit site &gt;</a>
+				<%
+			}
+		%>
+		
+	</header>
+	
+	<%
+	if (images.length) {
+
+		for ( var i = 0; i < images.length; i += 1 ) { %>
+			
+			<img class="figure figure--full" src="<%= images[i] %>" width="620" height="350" alt="" />
+		
+		<% }
+	}
+	%>
 
 </article>
