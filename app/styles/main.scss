@@ -205,6 +205,14 @@ body {
 		border-bottom-style: solid;
 	}
 
+	@media screen and (max-width: 640px) {
+		
+		&.active {
+			// No active states in mobile version
+			border-bottom-style: dotted;
+		}
+	}
+
 	// Make links easier to click on touch devices
 	.link {
 		display: block;

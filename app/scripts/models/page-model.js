@@ -128,14 +128,6 @@ define([
                 'top': ((container_coordinates.y * 100) * -1) + '%'
             });
 
-            // If we're on the small screen version, we want to physically scroll to the page
-            if ( $(document).width() <= 640 ) {
-
-                // Find physical location of requested page
-
-                // Move user down there
-            }
-
             var xPercent = ((container_coordinates.x * 100) * -0.2);
             var yPercent = ((container_coordinates.y * 100) * -1);
 

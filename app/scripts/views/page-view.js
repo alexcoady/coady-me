@@ -59,6 +59,19 @@ define([
                 document.title = this.model.get('title');
                 this.$el.addClass('active').removeClass('inactive');
 
+
+                // If we're on the small screen version, we want to physically scroll to the page
+                if ( $(document).width() <= 640 ) {
+
+                    // Find physical location of requested page
+                    console.log( this.$el.position() );
+                    // Move user down there
+
+                    $('html, body').animate({
+                        scrollTop: this.$el.position().top
+                    }, 1000);
+                }
+
             } else {
 
                 this.$el.removeClass('active').addClass('inactive');
