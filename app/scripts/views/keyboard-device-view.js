@@ -72,6 +72,10 @@ define([
 
         	var that = this;
 
+            if ( $(document).width() <= 640 ) {
+                return; 
+            }
+
             $(window).on('keydown', function (keyEvent) { 
 
                 var transform = { x: 0, y: 0 };
@@ -110,6 +114,10 @@ define([
 
             var that = this,
                 lock = false;
+
+            if ( $(document).width() <= 640 ) {
+                return; 
+            }
 
             $(window).bind('mousewheel', function (ev) {
 
