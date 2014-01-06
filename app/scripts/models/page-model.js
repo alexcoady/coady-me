@@ -56,7 +56,8 @@ define([
             if (!pageGroup) { 
                 
                 console.log('404!');
-                return false;
+                pageGroup = pageGroupCollection.findWhere({ 'permalink': 'about' });
+                // return false;
             }
 
             // 2. Get collection from group model
