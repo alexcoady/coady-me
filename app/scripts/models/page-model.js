@@ -41,8 +41,8 @@ define([
         loadPage: function (page_group_permalink, page_permalink) {
 
             // If no page_permalink was set, we look for the INDEX
-            page_group_permalink = page_group_permalink ? page_group_permalink : "about";
-            page_permalink = page_permalink ? page_permalink : "index";
+            page_group_permalink = page_group_permalink || "about";
+            page_permalink = page_permalink || "index";
 
             /* ---------------------------------------------------------------------- */
             // Find and manage page navigation
@@ -73,7 +73,8 @@ define([
             if (!page) { 
                 
                 console.log('404: Page not found within valid page group');
-                return false;
+                page = pageCollection.findWhere({ 'permalink': 'index' });
+                // return false;
             }
 
             /* ---------------------------------------------------------------------- */
